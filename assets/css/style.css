@@ -48,8 +48,11 @@ h2 {
 }
 
 p {
-
     font-size: 18px;
+}
+
+a {
+    color: var(--accent-color)
 }
 
 blockquote {
@@ -99,6 +102,7 @@ blockquote>p {
 
 .ca-header-text {
     margin-left: 6px;
+    margin-top: -6px;
 }
 
 .ca-header-text h2 {
@@ -111,6 +115,18 @@ blockquote>p {
 .ca-header-text p {
     height: 18px;
     margin: 2px 0;
+}
+
+/* ====== header links ====== */
+
+.ca-tabscontainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.ca-tablinks {
+    margin: 0 6px;
 }
 
 /*
