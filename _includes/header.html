@@ -3,11 +3,11 @@
         <img src="/assets/images/cate.png" onclick="randomHeader()">
         <div class="ca-header-text">
             <h2>{% if page.title %}{{ page.title }} - cookisite{% else %} cookisite{% endif %}</h2>
-            <p id="randomHeader">default header</p>
+            <p id="randomHeader">meow :3</p>
+            <script src="/assets/js/random.js"></script>
         </div>
     </div>
     <div class="ca-tabscontainer">
-        <a class="ca-tablinks" href="/"><i class="nerd-font nf-fa-home"></i> home</a>
-        <a class="ca-tablinks" href="/test"><i class="nerd-font nf-md-space_invaders"></i> debug</a>
+        {% include tabs.html %}
     </div>
 </header>

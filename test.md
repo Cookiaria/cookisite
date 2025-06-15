@@ -4,6 +4,7 @@ title: super secret debug page (real)
 description: testing page
 ---
 
+# human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
 
 # The glungus galunga bobo.
 The bongungus wagongus bubo chonko. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tortor libero, nec laoreet sem condimentum nec. Mauris at luctus tellus. Nam eu malesuada nulla, sed condimentum augue. Aenean ut tristique lacus, <img src="/assets/emotes/ralBoop.png" class="ca-emote"> in dapibus mauris. Donec posuere nisi non ipsum commodo auctor. Mauris vel viverra nulla. In mattis vulputate scelerisque. Sed malesuada quam in ligula porttitor commodo. Sed varius ut lorem eget efficitur. Etiam viverra accumsan convallis. 
@@ -101,10 +102,10 @@ text fx
 3. lol
 1024. hehe
 
-| TABLE?! | IN MY MARKDOWN | ?! | :3 |
-| - | - | - | - |
+| TABLE?!  | IN MY MARKDOWN        | ?!                  | :3     |
+| -        | -                     | -                   | -      |
 | its more | likely than you think | holy fucking bingle | what?! |
-| meow | meow | meow | meow |
+| meow     | meow                  | meow                | meow   |
 
 - [x] yea
 - [ ] nah

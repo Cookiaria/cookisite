@@ -10,9 +10,10 @@
     --codeblock-font: "Ubuntu Mono", monospace;
 
     --text-color: white;
-    --accent-color: #ff8600;
+    --accent-color: #f86;
 
-    --background-color: #17161E;
+    --background-color: color-mix(in srgb, var(--accent-color), black 90%);
+    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.1) 95%);
 
     --main-width: 1024px;
     --roundiness: 8px;
@@ -82,7 +83,7 @@ blockquote>p {
 
 .ca-header {
     position: relative;
-    background: url(/assets/images/banner.png);
+    background: url(/assets/images/banner.png) no-repeat center center;
     background-size: cover;
     width: 100%;
     margin: 0 auto;
@@ -90,6 +91,7 @@ blockquote>p {
     object-fit: cover;
     display: flex;
     align-items: center;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
 
     z-index: 2;
 
@@ -110,10 +112,13 @@ blockquote>p {
 }
 
 .ca-header-text h2 {
-    font-family: var(--default-font);
-    font-size: 36px;
-    font-weight: 500;
-    margin: 0;
+	font-family: var(--main-font);
+	font-size: 36px;
+	font-weight: 500;
+	margin: 0;
+	-webkit-text-stroke: 0.15em color-mix(in srgb-linear, var(--accent-color), rgb(0, 0, 0) 95%);
+	paint-order: stroke fill;
+	color: color-mix(in srgb-linear, var(--accent-color), white 50%);
 }
 
 .ca-header-text p {
@@ -128,7 +133,7 @@ blockquote>p {
     position: relative;
     padding: calc(var(--padding) / 3) var(--padding);
     width: fit-content;
-    background: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 90%);
+    background: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 75%);
     margin: 0 3px 0 0;
     padding-top: 12px;
     color: white;
@@ -149,7 +154,6 @@ blockquote>p {
 .ca-tablinks:hover {
     top: 2px;
     padding-bottom: 9px;
-    color: var(--accent-color);
     background: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 50%);
 }
 
@@ -164,9 +168,10 @@ blockquote>p {
     --maincontent-padding-x: 16px;
     margin: 18px auto 0 auto;
     padding: var(--maincontent-padding-y) var(--maincontent-padding-x);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--body-color);
     backdrop-filter: blur(16px);
     border-radius: var(--roundiness);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
 
     min-height: calc(100vh - 200px);
 }
@@ -187,8 +192,9 @@ blockquote>p {
     width: 100%;
     height: 100%;
     background: url(/assets/images/tiles/cattile_dark.png) repeat;
-    opacity: 0.02;
-    animation: cattile 120s linear infinite;
+    background-size: 256px;
+    opacity: 0.05;
+    animation: cattile 20s linear infinite;
 }
 
 @keyframes cattile {
@@ -197,7 +203,7 @@ blockquote>p {
     }
 
     100% {
-        background-position: 100% 100%;
+        background-position: 256px 256px;
     }
 }
 
@@ -207,7 +213,7 @@ blockquote>p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0) 60%, var(--background-color) 100%);
+    background: radial-gradient(circle, transparent 60%, var(--background-color) 100%);
 }
 
 /*
@@ -225,6 +231,7 @@ blockquote>p {
 
 .ca-jp {
     font-family: var(--jp-font);
+    font-weight: 800;
 }
 
 /* table */
