@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=M+PLUS+Rounded+1c&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url("/assets/css/nerdfonts.css");
 @import url('/assets/css/squaresans.css');
 
@@ -6,6 +6,7 @@
 :root {
     --header-font: "PF Square Sans Pro", sans-serif;
     --main-font: "Fredoka", sans-serif;
+    --jp-font: "M PLUS Rounded 1c", sans-serif;
     --codeblock-font: "Ubuntu Mono", monospace;
 
     --text-color: white;
@@ -49,10 +50,6 @@ h2 {
 p {
 
     font-size: 18px;
-}
-
-strong {
-    margin: 0 0.3em;
 }
 
 blockquote {
@@ -184,6 +181,10 @@ blockquote>p {
     width: auto;
     object-fit: contain;
     margin: -0.45em 0;
+}
+
+.ca-jp {
+    font-family: var(--jp-font);
 }
 
 /* table */
