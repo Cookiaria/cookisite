@@ -16,6 +16,7 @@
 
     --main-width: 1024px;
     --roundiness: 8px;
+    --header-border: 2px;
 }
 
 /*
@@ -80,6 +81,7 @@ blockquote>p {
 */
 
 .ca-header {
+    position: relative;
     background: url(/assets/images/banner.png);
     background-size: cover;
     width: 100%;
@@ -89,9 +91,11 @@ blockquote>p {
     display: flex;
     align-items: center;
 
+    z-index: 2;
+
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    border-bottom: 4px solid var(--accent-color);
+    border-bottom: var(--header-border) solid var(--accent-color);
 }
 
 .ca-header>img {
@@ -119,14 +123,34 @@ blockquote>p {
 
 /* ====== header links ====== */
 
-.ca-tabscontainer {
-    position: fixed;
+.ca-tablinks {
+    --padding: 12px;
+    position: relative;
+    padding: calc(var(--padding) / 3) var(--padding);
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.015);
+    margin: 0 3px 0 0;
+    padding-top: 12px;
+    color: white;
+    text-decoration: unset;
+    font-size: 0.8em;
     top: 0;
-    right: 0;
+
+    border-bottom-left-radius: var(--roundiness);
+    border-bottom-right-radius: var(--roundiness);
+    border: var(--header-border) solid var(--accent-color);
+    z-index: 0;
+    transition-duration: 0.1s;
 }
 
-.ca-tablinks {
-    margin: 0 6px;
+.ca-tablinks:nth-child(1) {
+    margin-left: 16px;
+}
+
+.ca-tablinks:hover {
+    top: 2px;
+    padding-bottom: 9px;
+    color: var(--accent-color);
 }
 
 /*
@@ -138,13 +162,13 @@ blockquote>p {
 .ca-maincontent {
     --maincontent-padding-y: 8px;
     --maincontent-padding-x: 16px;
-    margin: 16px auto 0 auto;
+    margin: 18px auto 0 auto;
     padding: var(--maincontent-padding-y) var(--maincontent-padding-x);
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16px);
     border-radius: var(--roundiness);
 
-    min-height: 100%;
+    min-height: calc(100vh - 200px);
 }
 
 .ca-background {
