@@ -13,10 +13,9 @@
     <meta content="welcome to my personal website thing!" property="og:description">
     <link rel="icon" href="/assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/codeblock.css">
 
-    
-
-    <title>cookisite</title>
+    <title>{% if page.title %}{{ page.title }} - cookisite{% else %} cookisite{% endif %}</title>
 </head>
 
 <body>
@@ -27,6 +26,8 @@
             {{ content }}
         </div>
 
+        {% include footer.html %}
+
         <div class="ca-background">
             <div class="ca-backgroundimg"></div>
             <div class="ca-backgroundoverlay"></div>
@@ -35,6 +36,7 @@
 
     <div class="javascript">
         <script src="/assets/js/random.js"></script>
+        <script src="/assets/js/codeblock.js"></script>
     </div>
 </body>
 

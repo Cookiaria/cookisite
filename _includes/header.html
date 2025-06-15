@@ -2,8 +2,11 @@
     <div class="ca-header">
         <img src="/assets/images/cate.png" onclick="randomHeader()">
         <div class="ca-header-text"> 
-            <h2>cookisite</h2>
+            <h2>{% if page.title %}{{ page.title }} - cookisite{% else %} cookisite{% endif %}</h2>
             <p id="randomHeader">default header</p>
+        </div>
+        <div>
+
         </div>
     </div>
 </header>
