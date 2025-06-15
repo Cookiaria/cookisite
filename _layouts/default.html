@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta content="https://cookiaria.lol" property="og:url">
+    <meta content="/assets/banner.png" property="og:image">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- meta content -->
+    <meta content="welcome to my personal website thing!" property="og:description">
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    
+
+    <title>cookisite</title>
+</head>
+
+<body>
+    <div id="everything">
+        {% include header.html %}
+
+        <div class="ca-maincontent">
+            {{ content }}
+        </div>
+
+        <div class="ca-background">
+            <div class="ca-backgroundimg"></div>
+            <div class="ca-backgroundoverlay"></div>
+        </div>
+    </div>
+
+    <div class="javascript">
+        <script src="/assets/js/random.js"></script>
+    </div>
+</body>
+
+</html>
