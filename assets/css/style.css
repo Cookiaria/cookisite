@@ -11,9 +11,13 @@
 
     --text-color: white;
     --accent-color: #f86;
+    --body-color: rgb(46, 19, 40);
 
-    --background-color: color-mix(in srgb, var(--accent-color), black 90%);
-    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.1) 95%);
+    --background-color: rgb(49, 22, 14);
+    --background-tile: url(/assets/images/tiles/cattile_dark.png);
+    --background-tile-size: 384px;
+    --background-animation-speed: 30s;
+    --background-vignette: radial-gradient(circle, transparent 50%, var(--background-color) 100%);
 
     --main-width: 1024px;
     --roundiness: 8px;
@@ -25,13 +29,57 @@
 */
 
 body {
+    --sb-track-color: var(--body-color);
+    --sb-thumb-color: var(--accent-color);
+    --sb-size: 6px;
+}
+
+/* Vertical scrollbar */
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
+    /* This is needed for horizontal scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+/* Horizontal scrollbar */
+body::-webkit-scrollbar:horizontal {
+    height: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track:horizontal {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb:horizontal {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+        scrollbar-width: thin;
+    }
+}
+
+body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: var(--main-font);
     background: var(--background-color);
     color: var(--text-color);
-
     font-size: 20px;
 }
 
@@ -47,6 +95,7 @@ h6 {
 h1,
 h2 {
     font-weight: 600;
+    margin: 12px 0;
 }
 
 p {
@@ -54,7 +103,13 @@ p {
 }
 
 a {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: color-mix(in srgb, var(--accent-color), rgb(255, 255, 255) 25%);
+    text-decoration: underline;
 }
 
 blockquote {
@@ -73,6 +128,7 @@ blockquote>p {
 #everything {
     margin: 0 auto;
     max-width: var(--main-width);
+    min-width: var(--min-width);
 }
 
 /*
@@ -82,8 +138,10 @@ blockquote>p {
 */
 
 .ca-header {
+    user-select: none;
     position: relative;
-    background: url(/assets/images/banner.png) no-repeat center center;
+    background: url(/assets/images/banner.png) no-repeat right 60%;
+    background-color: color-mix(in srgb, var(--body-color), transparent 80%);
     background-size: cover;
     width: 100%;
     margin: 0 auto;
@@ -91,13 +149,13 @@ blockquote>p {
     object-fit: cover;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
-
     z-index: 2;
 
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    border-bottom: var(--header-border) solid var(--accent-color);
+
+    border-bottom: var(--header-border) solid color-mix(in srgb, var(--accent-color), var(--body-color) 50%);
+    backdrop-filter: blur(12px) brightness(80%);
 }
 
 .ca-header>img {
@@ -106,24 +164,33 @@ blockquote>p {
     padding: 12px;
 }
 
+.ca-header>img:hover {
+    transform: scale(1.02);
+    transition-duration: 0.25s;
+}
+
 .ca-header-text {
     margin-left: 6px;
     margin-top: -6px;
 }
 
 .ca-header-text h2 {
-	font-family: var(--main-font);
-	font-size: 36px;
-	font-weight: 500;
-	margin: 0;
-	-webkit-text-stroke: 0.15em color-mix(in srgb-linear, var(--accent-color), rgb(0, 0, 0) 95%);
-	paint-order: stroke fill;
-	color: color-mix(in srgb-linear, var(--accent-color), white 50%);
+    font-family: var(--main-font);
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    -webkit-text-stroke: 0.15em color-mix(in srgb-linear, var(--accent-color), rgb(0, 0, 0) 90%);
+    paint-order: stroke fill;
+    color: color-mix(in srgb-linear, var(--accent-color), white 50%);
 }
 
 .ca-header-text p {
     height: 18px;
     margin: 2px 0;
+}
+
+#randomHeader {
+    text-shadow: 0 0 4px color-mix(in srgb, var(--accent-color), black 80%);
 }
 
 /* ====== header links ====== */
@@ -164,16 +231,15 @@ blockquote>p {
 */
 
 .ca-maincontent {
-    --maincontent-padding-y: 8px;
-    --maincontent-padding-x: 16px;
     margin: 18px auto 0 auto;
-    padding: var(--maincontent-padding-y) var(--maincontent-padding-x);
-    background-color: var(--body-color);
-    backdrop-filter: blur(16px);
+    padding: 8px 16px;
     border-radius: var(--roundiness);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
 
-    min-height: calc(100vh - 200px);
+    background-color: color-mix(in srgb, var(--body-color), transparent 80%);
+    backdrop-filter: blur(12px) brightness(80%);
+
+    min-height: calc(100vh - 266px);
 }
 
 .ca-background {
@@ -191,10 +257,10 @@ blockquote>p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(/assets/images/tiles/cattile_dark.png) repeat;
-    background-size: 256px;
+    background: var(--background-tile) repeat;
+    background-size: var(--background-tile-size);
     opacity: 0.05;
-    animation: cattile 20s linear infinite;
+    animation: cattile var(--background-animation-speed) linear infinite;
 }
 
 @keyframes cattile {
@@ -203,7 +269,7 @@ blockquote>p {
     }
 
     100% {
-        background-position: 256px 256px;
+        background-position: calc(var(--background-tile-size) * 2) var(--background-tile-size);
     }
 }
 
@@ -213,7 +279,35 @@ blockquote>p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, transparent 60%, var(--background-color) 100%);
+    background: var(--background-vignette);
+}
+
+/*
+    ===========
+    footer styles
+    ===========
+*/
+
+footer {
+    margin: 8px 0 16px 0;
+}
+
+.ca-footer {
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.ca-footer p {
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.ca-footer a {
+    font-size: 24px;
+    margin: 0 4px;
 }
 
 /*
