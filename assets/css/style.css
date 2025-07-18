@@ -9,11 +9,11 @@
     --jp-font: "M PLUS Rounded 1c", sans-serif;
     --codeblock-font: "Ubuntu Mono", monospace;
 
-    --text-color: white;
     --accent-color: #f86;
+    --text-color: color-mix(in srgb, var(--accent-color), white 70%);
     --body-color: rgb(46, 19, 40);
 
-    --background-color: rgb(49, 22, 14);
+    --background-color: color-mix(in srgb, var(--accent-color), black 80%);
     --background-tile: url(/assets/images/tiles/cattile_dark.png);
     --background-tile-size: 384px;
     --background-animation-speed: 30s;
