@@ -5,7 +5,7 @@
         "Geometry Dash Nexus",
         "but can it play bad apple?",
         "YOUR IP: 192.168.0.1. Hacked.",
-        "[object Object]",
+        {},
         "meow",
         "He he! Found some new data!",
         "Processing... processing... daydreaming...",
@@ -120,6 +120,8 @@
         "It's raining somewhere else...",
         "...the place where it rained.",
         "naneinf",
-        "El gato balatro"
+        "El gato balatro",
+        "undefined",
+        ""
     ]
 }

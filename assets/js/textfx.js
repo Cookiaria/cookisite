@@ -4,7 +4,7 @@
 // goal is to make it so that you can call "shakyText()"
 // with parameters ("shakyText(100,0.1)")
 
-function shakyText(shakeInterval = 33.333, shakeStrength = 0.075) {
+function shakyText(shakeInterval = 33.333, shakeStrength = 0.1) {
     const shakySpans = document.querySelectorAll('#shaky');
 
     shakySpans.forEach(element => {

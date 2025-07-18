@@ -16,6 +16,7 @@ function randomHeader() {
             randomIndex = Math.floor(Math.random() * headersData.length);
         } while (randomIndex === previousIndex && headersData.length > 1); 
         previousIndex = randomIndex;
+
         randomHeaderElement.innerHTML = headersData[randomIndex];
     }
 }

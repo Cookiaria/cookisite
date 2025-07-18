@@ -1,9 +1,21 @@
 ---
 layout: default
 ---
+<script src="https://cdn.jsdelivr.net/gh/cgytrus/cgyt.ru-temp/unnamed-webring.js"></script>
+
 
 <h1>~ welcome to the cookisite! ~</h1>
 
 <p>hi! <img src="/assets/emotes/ralWave.gif" class="ca-emote"> welcome to this silly place!</p>
+<br>
+<div>
+    <p>this website is part of "unnamed webring"! use the buttons below to navigate :3</p>
+    <a id="webring-prev">prev</a> <a id="webring-next">next</a></span><br/>
+</div>
 
-<p></p>
+<script>
+    getWebringLinks('cookiaria.lol').then(links => {
+        document.getElementById('webring-prev').href = links.prev;
+        document.getElementById('webring-next').href = links.next;
+    });
+</script>
