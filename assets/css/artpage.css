@@ -1,0 +1,57 @@
+.ca-artposts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: fit-content;
+    margin: 24px auto;
+}
+
+@media only screen and (max-width: 960px) {
+    .ca-artposts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .ca-artposts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.ca-artpost {
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: var(--roundiness);
+    border: 6px rgba(255, 255, 255, 0.05) solid;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    transition-duration: 0.25s;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.ca-artpost:hover {
+    background-color: color-mix(in srgb, rgba(255, 255, 255, 0.05), var(--accent-color) 10%);
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+.ca-artpost > img {
+    --artsize: 256px;
+    min-width: var(--artsize);
+    max-width: var(--artsize);
+    min-height: var(--artsize);
+    max-height: var(--artsize);
+    border-radius: var(--roundiness);
+    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.ca-artpost > h3 {
+    margin: 12px 0;
+}
+
+.ca-artpost-description,
+.ca-artpost-title {
+    max-width: 253px;
+}

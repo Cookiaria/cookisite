@@ -1,4 +1,32 @@
 ---
 layout: default
-title: art
+title: Art
 ---
+
+<link rel="stylesheet" href="/assets/css/artpage.css?v={{ '/assets/css/artpage.css' | file_mtime | date: '%s'}}">
+
+<div class="ca-artposts">
+
+    <a class="ca-artpost" href="{{ post.url }}">
+        <h3 class="ca-artpost-title">
+            long title test asdfasdfsd fasd f asd jfa hsjdkf ahjksdf hjklasdf hjkasdf hjlkasd fhjkas dhgfjk ashdufil
+        </h3>
+        <img src="/assets/images/HELLO.png">
+        <p class="ca-artpost-description">
+            i love technology. <br> its okay
+        </p>
+    </a>
+
+    {% for post in site.artposts %}
+    <a class="ca-artpost" href="{{ post.url }}">
+        <h3 class="ca-artpost-title">
+            {{ post.title }}
+        </h3>
+        <img src="{{ post.image }}">
+        <p class="ca-artpost-description">
+            {{ post.description }}
+        </p>
+    </a>
+    {% endfor %}
+
+</div>

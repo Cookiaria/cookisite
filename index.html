@@ -1,21 +1,78 @@
 ---
 layout: default
 ---
-<script src="https://cdn.jsdelivr.net/gh/cgytrus/cgyt.ru-temp/unnamed-webring.js"></script>
+
+<h1 style="text-align: center;"> ~ welcome to the cookisite! ~ </h1>
+
+<style>
+    .hello {
+        width: 180px;
+        border-radius: 24px;
+        border: 4px solid var(--accent-color);
+        margin-right: 16px;
+    }
+
+    .the {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 8px;
+        border-radius: 24px;
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+    }
+
+    .starwalker {
+        background: linear-gradient(to bottom, #E2E297, #FFFF0A);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold
+    }
+</style>
+
+<div class="the">
+    <img src="/assets/images/HELLO.png" class="hello">
+    <p><span style="font-size: 2em;font-weight: 600;">heya! my name's cookiaria</span><br><br>
+        i'm a 21yo, she/her <span style="font-size: 0.6em;opacity: 0.5;">(tiny)</span>furry person thing that loves spending time and making things on the internet!</p>
+</div>
+
+<p>
+    aaand.. welcome to my website! <img src="/assets/emotes/ralsei/ralWave.gif" class="ca-emote"> this will be mostly used for posting my art, projects, and some blogs (probably...)
+</p>
 
 
-<h1>~ welcome to the cookisite! ~</h1>
-
-<p>hi! <img src="/assets/emotes/ralWave.gif" class="ca-emote"> welcome to this silly place!</p>
-<br>
 <div>
-    <p>this website is part of "unnamed webring"! use the buttons below to navigate :3</p>
-    <a id="webring-prev">prev</a> <a id="webring-next">next</a></span><br/>
+    <p>this website is part of "unnamed webring"! use the buttons below to navigate :3 <br>
+        <a id="webring-prev">prev</a> <a id="webring-next">next</a></span><br />
+    </p>
 </div>
 
 <script>
+    async function getWebringLinks(domain) {
+        let domains = (await (await fetch('https://gist.githubusercontent.com/cgytrus/815ad706c1c3b32b77ee8f3e0e8b1b4f/raw/unnamed-webring.txt')).text()).split(/\r?\n/).filter(x => x.length > 0);
+        for (let i = 0; i < domains.length; i++) {
+            if (!domains[i].includes(domain))
+                continue;
+            return {
+                prev: `https://${domains[(i - 1 + domains.length) % domains.length]}`,
+                next: `https://${domains[(i + 1) % domains.length]}`
+            };
+        }
+        return {};
+    }
+
     getWebringLinks('cookiaria.lol').then(links => {
         document.getElementById('webring-prev').href = links.prev;
         document.getElementById('webring-next').href = links.next;
     });
 </script>
+
+
+<h2>~ asset credits:</h2>
+<p>
+&nbsp;&nbsp;&nbsp;- <a href="https://bsky.app/profile/alsoangle.bsky.social" target="_blank">alsoangle</a>, ralsei emotes! <br>
+&nbsp;&nbsp;&nbsp;- Toby Fox, ralsei sprites, and some emotes<br>
+&nbsp;&nbsp;&nbsp;- icyMaxi, index about me image

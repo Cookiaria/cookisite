@@ -15,13 +15,16 @@
 
     --background-color: color-mix(in srgb, var(--accent-color), black 80%);
     --background-tile: url(/assets/images/tiles/cattile_dark.png);
-    --background-tile-size: 384px;
+    --background-tile-size: 256px;
     --background-animation-speed: 30s;
+    --background-opacity: 0.05;
     --background-vignette: radial-gradient(circle, transparent 50%, var(--background-color) 100%);
 
     --main-width: 1024px;
     --roundiness: 8px;
     --header-border: 2px;
+
+    --min-width: 520px;
 }
 
 /*
@@ -189,10 +192,6 @@ blockquote>p {
     margin: 2px 0;
 }
 
-#randomHeader {
-    text-shadow: 0 0 4px color-mix(in srgb, var(--accent-color), black 80%);
-}
-
 /* ====== header links ====== */
 
 .ca-tablinks {
@@ -259,7 +258,7 @@ blockquote>p {
     height: 100%;
     background: var(--background-tile) repeat;
     background-size: var(--background-tile-size);
-    opacity: 0.05;
+    opacity: var(--background-opacity);
     animation: cattile var(--background-animation-speed) linear infinite;
 }
 
@@ -269,7 +268,7 @@ blockquote>p {
     }
 
     100% {
-        background-position: calc(var(--background-tile-size) * 2) var(--background-tile-size);
+        background-position: calc(var(--background-tile-size) * -1) var(--background-tile-size);
     }
 }
 

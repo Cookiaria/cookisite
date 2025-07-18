@@ -1,0 +1,12 @@
+<header>
+    <div class="ca-header">
+        <img src="/assets/images/cate.png" onclick="randomHeader()">
+        <div class="ca-header-text">
+            <h2>{% if page.title %}{{ page.title }}{% else %} Cookisite{% endif %}</h2>
+            <script src="/assets/js/random.js"></script>
+        </div>
+    </div>
+    <div class="ca-tabscontainer">
+        {% include tabs.html %}
+    </div>
+</header>
