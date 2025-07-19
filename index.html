@@ -4,6 +4,8 @@ layout: default
 
 <h1 style="text-align: center;"> ~ welcome to the cookisite! ~ </h1>
 
+<img src="/assets/amog.png" class="amog">
+
 <style>
     .hello {
         width: 180px;
@@ -24,14 +26,6 @@ layout: default
         backdrop-filter: blur(10px);
     }
 
-    .starwalker {
-        background: linear-gradient(to bottom, #E2E297, #FFFF0A);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        font-weight: bold
-    }
-
     .webring {
         text-align: center;
     }
@@ -48,6 +42,14 @@ layout: default
         margin: 0 auto;
         width: 200px;
         image-rendering: pixelated;
+    }
+
+    .amog {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.01;
+        width: 64px;
     }
 </style>
 
@@ -69,7 +71,7 @@ layout: default
     <br>
     <br>
     <p>while you're down here, why not browse the "unnamed webring"? :3c</p>
-    <span>&lt;</span> <a id="webring-prev" class="ca-button"></a> <a id="webring-next" class="ca-button"></a> <span>></span>
+    <span>&lt;</span> <a id="webring-prev" class="ca-button"></a> • <a id="webring-next" class="ca-button"></a> <span>></span>
 </div>
 
 <script>

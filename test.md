@@ -4,42 +4,42 @@ title: super secret debug page (real)
 description: testing page
 ---
 
-# human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
+<style>
+    :root {
+        --accent-color: #4a59fcff;
 
-# The glungus galunga bobo.
+        --background-color: #0C1574;
+        --background-tile: url(/assets/images/tiles/tenna.gif);
+        --background-tile-size: 256px;
+        --background-animation-speed: 6s;
+        --background-opacity: 1;
+        --background-vignette: radial-gradient(circle, transparent 50%, var(--background-color) 100%);
+    }
+</style>
+
+page for testing almost all markdown crap and some css variables lmao 
+
+## human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
+
+### The glungus galunga bobo.
 The bongungus wagongus bubo chonko. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tortor libero, nec laoreet sem condimentum nec. Mauris at luctus tellus. Nam eu malesuada nulla, sed condimentum augue. Aenean ut tristique lacus, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> in dapibus mauris. Donec posuere nisi non ipsum commodo auctor. Mauris vel viverra nulla. In mattis vulputate scelerisque. Sed malesuada quam in ligula porttitor commodo. Sed varius ut lorem eget efficitur. Etiam viverra accumsan convallis. 
 
 Vestibulum nisl magna, laoreet sit amet lacinia sed, commodo nec augue. Sed faucibus purus nec facilisis vehicula. Donec ut nibh molestie, egestas ante id, dignissim ipsum. Maecenas tellus est, gravida a sem vitae, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> venenatis vulputate felis. Vivamus malesuada pellentesque placerat. Curabitur maximus venenatis est sit amet tincidunt. Vestibulum pellentesque dignissim enim, ac varius massa ornare sed. 
 
 <h2>Your next<img src="/assets/images/physicalchallenge.gif" class="ca-emote">... is to learn JAVA.</h2>
 
-```css
-table {
-    width: fit-content;
-    margin: 0 auto;
-}
-
-thead th:first-child {
-    border-top-left-radius: var(--roundiness);
-}
-
-thead th:last-child {
-    border-top-right-radius: var(--roundiness);
-}
-
-tbody tr:last-child td:first-child {
-    border-bottom-left-radius: var(--roundiness);
-}
-
-tbody tr:last-child td:last-child {
-    border-bottom-right-radius: var(--roundiness);
-}
-
-th,
-td {
-    padding: 10px;
-    border: 1px solid color-mix(in srgb, var(--text-color), transparent 50%);
-    text-align: left;
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        
+        int sum = add(5, 3);
+        System.out.println("5 + 3 = " + sum);
+    }
+    
+    public static int add(int a, int b) {
+        return a + b;
+    }
 }
 ```
 
