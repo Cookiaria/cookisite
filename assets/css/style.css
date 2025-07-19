@@ -231,7 +231,7 @@ blockquote>p {
 
 .ca-maincontent {
     margin: 18px auto 0 auto;
-    padding: 8px 16px;
+    padding: 16px 16px;
     border-radius: var(--roundiness);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
 
@@ -355,4 +355,20 @@ td {
     padding: 10px;
     border: 1px solid color-mix(in srgb, var(--text-color), transparent 50%);
     text-align: left;
+}
+
+/* general buttons for ui stuff maybe??? i dont know */
+
+.ca-button {
+    margin: 4px;
+    padding: 4px 6px;
+    border-radius: calc(var(--roundiness) * 0.75);
+    background-color: color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.1) 90%);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    transition-duration: 0.25s;
+}
+
+.ca-button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.1) 80%);
+    border: 4px solid rgba(255, 255, 255, 0.1);
 }

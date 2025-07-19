@@ -31,23 +31,45 @@ layout: default
         color: transparent;
         font-weight: bold
     }
+
+    .webring {
+        text-align: center;
+    }
+
+    .rale {
+        position: absolute;
+        image-rendering: pixelated;
+        bottom: 16px;
+        left: 4px;
+    }
+
+    .idiot {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        image-rendering: pixelated;
+    }
 </style>
 
 <div class="the">
     <img src="/assets/images/HELLO.png" class="hello">
     <p><span style="font-size: 2em;font-weight: 600;">heya! my name's cookiaria</span><br><br>
-        i'm a 21yo, she/her <span style="font-size: 0.6em;opacity: 0.5;">(tiny)</span>furry person thing that loves spending time and making things on the internet!</p>
+        i'm a 21yo, she/her <span style="font-size: 0.6em;opacity: 0.5;">(tiny)</span>furry person thing that loves
+        spending time and making things on the internet!</p>
 </div>
 
 <p>
-    aaand.. welcome to my website! <img src="/assets/emotes/ralsei/ralWave.gif" class="ca-emote"> this will be mostly used for posting my art, projects, and some blogs (probably...)
+    aaand.. welcome to my website! <img src="/assets/emotes/ralsei/ralWave.gif" class="ca-emote"> this will be mostly
+    used for posting my art, projects, and some blogs (probably...)
 </p>
 
+<img src="/assets/images/sit.png" class="idiot">
 
-<div>
-    <p>this website is part of "unnamed webring"! use the buttons below to navigate :3 <br>
-        <a id="webring-prev">prev</a> <a id="webring-next">next</a></span><br />
-    </p>
+<div class="webring">    
+    <br>
+    <br>
+    <p>while you're down here, why not browse the "unnamed webring"? :3c</p>
+    <span>&lt;</span> <a id="webring-prev" class="ca-button"></a> <a id="webring-next" class="ca-button"></a> <span>></span>
 </div>
 
 <script>
@@ -57,22 +79,29 @@ layout: default
             if (!domains[i].includes(domain))
                 continue;
             return {
-                prev: `https://${domains[(i - 1 + domains.length) % domains.length]}`,
-                next: `https://${domains[(i + 1) % domains.length]}`
+                prev: {
+                    url: `https://${domains[(i - 1 + domains.length) % domains.length]}`,
+                    domain: domains[(i - 1 + domains.length) % domains.length]
+                },
+                next: {
+                    url: `https://${domains[(i + 1) % domains.length]}`,
+                    domain: domains[(i + 1) % domains.length]
+                }
             };
         }
         return {};
     }
 
     getWebringLinks('cookiaria.lol').then(links => {
-        document.getElementById('webring-prev').href = links.prev;
-        document.getElementById('webring-next').href = links.next;
+        const prevLink = document.getElementById('webring-prev');
+        const nextLink = document.getElementById('webring-next');
+
+        prevLink.href = links.prev.url;
+        prevLink.textContent = links.prev.domain;
+
+        nextLink.href = links.next.url;
+        nextLink.textContent = links.next.domain;
     });
 </script>
 
-
-<h2>~ asset credits:</h2>
-<p>
-&nbsp;&nbsp;&nbsp;- <a href="https://bsky.app/profile/alsoangle.bsky.social" target="_blank">alsoangle</a>, ralsei emotes! <br>
-&nbsp;&nbsp;&nbsp;- Toby Fox, ralsei sprites, and some emotes<br>
-&nbsp;&nbsp;&nbsp;- icyMaxi, index about me image
+<img src="/assets/images/ral.gif" class="rale">
