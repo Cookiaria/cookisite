@@ -9,15 +9,19 @@ description: testing page
         --accent-color: #4a59fcff;
 
         --background-color: #0C1574;
-        --background-tile: url(/assets/images/tiles/tenna.gif);
-        --background-tile-size: 256px;
+        --background-tile: url(/assets/images/tiles/tenna_4x.gif);
+        --background-tile-size: 240px;
         --background-animation-speed: 6s;
         --background-opacity: 1;
-        --background-vignette: radial-gradient(circle, transparent 50%, var(--background-color) 100%);
+        --background-vignette: transparent;
     }
 </style>
 
 page for testing almost all markdown crap and some css variables lmao 
+
+<span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span>
+
+
 
 ## human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
 

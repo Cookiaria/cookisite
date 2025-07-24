@@ -1,4 +1,0 @@
-collections:
-  artposts:
-    output: true
-    permalink: /art/:name

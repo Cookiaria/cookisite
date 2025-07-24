@@ -5,3 +5,6 @@ description: fat ralph (ultrarealistic drawing) afdasdfasdfafd afsd sfaafads sfa
 image: /assets/images/fat_ralph.png
 ---
 
+<img src="{{ page.image }}" class="ca-inpost">
+
+<div class="ca-inpost-description">{{ page.description }}</div>

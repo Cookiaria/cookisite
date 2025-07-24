@@ -11,18 +11,20 @@
 
     --accent-color: #f86;
     --text-color: color-mix(in srgb, var(--accent-color), white 70%);
-    --body-color: rgb(46, 19, 40);
+    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.5) 80);
+    --body-filters: blur(20px) brightness(80%);
+    --body-shadow: 0 0 32px rgba(0, 0, 0, 0.75);
+
 
     --background-color: color-mix(in srgb, var(--accent-color), black 80%);
     --background-tile: url(/assets/images/tiles/cattile_dark.png);
-    --background-tile-size: 512px;
-    --background-animation-speed: 30s;
+    --background-tile-size: 420px;
+    --background-animation-speed: 25s;
     --background-opacity: 0.05;
     --background-vignette: radial-gradient(circle, transparent 50%, var(--background-color) 100%);
 
-    --main-width: 1024px;
+    --main-width: 1000px;
     --roundiness: 8px;
-    --header-border: 2px;
 
     --min-width: 520px;
 }
@@ -144,7 +146,9 @@ blockquote>p {
     user-select: none;
     position: relative;
     background: url(/assets/images/banner.png) no-repeat right 60%;
-    background-color: color-mix(in srgb, var(--body-color), transparent 80%);
+    background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
+
     background-size: cover;
     width: 100%;
     margin: 0 auto;
@@ -153,12 +157,9 @@ blockquote>p {
     display: flex;
     align-items: center;
     z-index: 2;
-
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-
-    border-bottom: var(--header-border) solid color-mix(in srgb, var(--accent-color), var(--body-color) 50%);
-    backdrop-filter: blur(12px) brightness(80%);
+    border-bottom-left-radius: var(--roundiness);
+    border-bottom-right-radius: var(--roundiness);
+    border-left: var(--header-border) solid var(--accent-color);
 }
 
 .ca-header>img {
@@ -192,17 +193,18 @@ blockquote>p {
     margin: 2px 0;
 }
 
-/* ====== header links ====== */
+/* ====== header tabs ====== */
 
 .ca-tablinks {
     --padding: 12px;
     position: relative;
     padding: calc(var(--padding) / 3) var(--padding);
     width: fit-content;
-    background: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 75%);
+    background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
     margin: 0 3px 0 0;
-    padding-top: 12px;
-    color: white;
+    padding-top: 4px;
+    color: var(--text-color);
     text-decoration: unset;
     font-size: 0.8em;
     top: 0;
@@ -220,7 +222,10 @@ blockquote>p {
 .ca-tablinks:hover {
     top: 2px;
     padding-bottom: 9px;
-    background: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 50%);
+    padding-top: 24px;
+    color: color-mix(in srgb, var(--accent-color), white 80%);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.25) 50%) 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 50%);
 }
 
 /*
@@ -230,13 +235,14 @@ blockquote>p {
 */
 
 .ca-maincontent {
-    margin: 18px auto 0 auto;
+    margin: 18px auto 32px auto;
     padding: 16px 16px;
     border-radius: var(--roundiness);
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+    border: 8px solid rgba(255, 255, 255, 0.01);
+    box-shadow: var(--body-shadow);
 
-    background-color: color-mix(in srgb, var(--body-color), transparent 80%);
-    backdrop-filter: blur(12px) brightness(80%);
+    background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
 
     min-height: calc(100vh - 266px);
 }
@@ -268,7 +274,7 @@ blockquote>p {
     }
 
     100% {
-        background-position: calc(var(--background-tile-size) * -1) var(--background-tile-size);
+        background-position: calc(var(--background-tile-size)) var(--background-tile-size);
     }
 }
 
@@ -360,25 +366,36 @@ td {
 /* general buttons for ui stuff maybe??? i dont know */
 
 .ca-button {
+    cursor: pointer;
     margin: 4px;
-    padding: 4px 6px;
+    padding: 6px 8px;
     border-radius: calc(var(--roundiness) * 0.75);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.25) 75%) 0%, rgba(255, 255, 255, 0) 100%);
     background-color: color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.1) 90%);
-    border: 2px solid rgba(255, 255, 255, 0.05);
     transition-duration: 0.25s;
 }
 
 .ca-button:hover {
-    background-color: color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.1) 80%);
-    border: 4px solid rgba(255, 255, 255, 0.1);
+    color: color-mix(in srgb, var(--accent-color), white 80%);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.25) 50%) 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 50%);
 }
 
-/* i'm the original    starwalker*/
+/* i'm the original
+        starwalker
+*/
 
         .starwalker {
-    background: linear-gradient(to bottom, #E2E297, #FFFF0A);
+    background: linear-gradient(to bottom, #E2E297, #ffc400);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: bold
+    font-weight: 500;
 }
+
+
+
+
+
+
+

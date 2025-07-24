@@ -1,0 +1,23 @@
+---
+layout: default
+title: meow @w@
+description: testing page
+---
+
+<a class="ca-button" onclick="accentColor('#f86');">default</a>
+
+<a class="ca-button" onclick="accentColor('#0000ff');">blue</a>
+<a class="ca-button" onclick="accentColor('#00ff00');"> <img src="/assets/emotes/configNEAR.png" class="ca-emote" style="border-radius: var(--roundiness);"> config</a>
+<a class="ca-button" onclick="accentColor('#ff0000');">evil</a>
+
+<p>uhhghh hsdf sh f <span id="shaky">HELOP</span> i dont know what the hell im doing</p>
+
+<p>I am the original &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="starwalker">Starwalker</span></p> 
+
+<script>
+    function accentColor(newColor) {
+        const root = document.documentElement;
+
+        root.style.setProperty('--accent-color', newColor);
+    }
+</script>
