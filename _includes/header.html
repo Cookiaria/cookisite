@@ -9,6 +9,9 @@
     </div>
     <div class="ca-tabscontainer">
         {% include tabs.html %}
-        {% include devtabs.html %}
+        
+        {% if jekyll.environment == "debug" %}
+            {% include devtabs.html %}
+        {% endif %}
     </div>
 </header>
