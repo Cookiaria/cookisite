@@ -174,11 +174,15 @@ blockquote>p {
     width: 96px;
     height: 96px;
     padding: 12px;
+    transition-duration: 0.25s;
 }
 
 .ca-header>img:hover {
     transform: scale(1.02);
-    transition-duration: 0.25s;
+}
+
+.ca-header>img:active {
+    transform: scale(0.98);
 }
 
 .ca-header-text {

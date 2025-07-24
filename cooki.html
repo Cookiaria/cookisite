@@ -42,7 +42,7 @@ description: cooki reference sheet!
         width: 100%;
         max-width: 720px;
         background-color: #764132;
-        border-radius: 16px;
+        border-radius: 1cqw;
     }
 
     #banner {
@@ -76,19 +76,28 @@ description: cooki reference sheet!
         margin-left: 6%;
         width: 44%;
         float: left;
+        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))
     }
 
     #cookiback {
         margin-right: 6%;
         width: 38%;
         float: right;
+        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))
+    }
+
+    #cookies {
+        margin-top: -2%;
+        
     }
 
     #shadingToggle {
+        width: 2cqw;
+        background-color: rgba(0, 0, 0, 0.25);
         margin-top: 2%;
         cursor: pointer;
         font-size: 3cqw;
-        -webkit-user-drag: none;
+        user-select: none;
     }
 
     .ca-emote {
@@ -106,6 +115,7 @@ description: cooki reference sheet!
     }
 
     .colorpill:active {
+        color: black !important;
         background: white !important;
     }
 </style>
@@ -113,10 +123,13 @@ description: cooki reference sheet!
 <div class="cooki-container">
     <main>
         <div id="banner">
+            <p style="float: left;margin-left: 2%;margin-top: 1%;opacity: 0.25;">shading: <input type="checkbox" id="shadingToggle" onchange="toggleShading(this)" checked></p>
             <h1>Cooki!</h1>
             <p>she/her ▪︎ <img src="/assets/emotes/transpan.png" class="ca-emote"></p>
-            <img src="/assets/ref/cooki-front-shaded.png" id="cookifront">
-            <img src="/assets/ref/cooki-back-shaded.png" id="cookiback"> <br>
+            <div id="cookies">
+                <img src="/assets/ref/cooki-front-shaded.png" id="cookifront">
+                <img src="/assets/ref/cooki-back-shaded.png" id="cookiback"> <br>
+            </div>
         </div>
 
         <div id="colors">
@@ -130,8 +143,7 @@ description: cooki reference sheet!
         </div>
 
         <div id="middle">
-            <button id="shadingToggle" onclick="toggleShading();">shading: on</button>
-            <p>some description here...,</p>
+            <p>ion know what to put here yet. just know that she's like &nbsp;&nbsp;Tiny </p>
         </div>
 
     </main>
@@ -148,20 +160,16 @@ description: cooki reference sheet!
 </script>
 
 <script>
-    function toggleShading() {
-        const toggleElement = document.getElementById('shadingToggle');
+    function toggleShading(checkbox) {
         const cookiFront = document.getElementById('cookifront');
-        const cookiBack = document.getElementById('cookiback')
-        const currentText = toggleElement.textContent;
+        const cookiBack = document.getElementById('cookiback');
 
-        if (currentText.includes('on')) {
-            cookiFront.src = '/assets/ref/cooki-front-unshaded.png';
-            cookiBack.src = '/assets/ref/cooki-back-unshaded.png';
-            toggleElement.textContent = 'shading: off';
-        } else {
+        if (checkbox.checked) {
             cookiFront.src = '/assets/ref/cooki-front-shaded.png';
             cookiBack.src = '/assets/ref/cooki-back-shaded.png';
-            toggleElement.textContent = 'shading: on';
+        } else {
+            cookiFront.src = '/assets/ref/cooki-front-unshaded.png';
+            cookiBack.src = '/assets/ref/cooki-back-unshaded.png';
         }
     }
 </script>
