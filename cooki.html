@@ -1,0 +1,167 @@
+---
+layout: ref
+title: meow
+description: cooki reference sheet!
+---
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+    @import url('/assets/css/squaresans.css');
+
+    body {
+        background-color: #935848;
+    }
+
+    h1 {
+        font-family: "PF Square Sans Pro", sans-serif;
+        font-size: 12cqw;
+        margin: 6% 0 0 0;
+        letter-spacing: -2%;
+        line-height: 50%;
+    }
+
+    p,
+    span {
+        font-family: "Fredoka", sans-serif;
+        margin: 2% 0 0 0;
+        font-weight: 500;
+        font-size: 2.8cqw;
+    }
+
+    p>.ca-emote {
+        font-size: 2.3cqw;
+    }
+
+    .cooki-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        width: 100%;
+        max-width: 720px;
+        background-color: #764132;
+        border-radius: 16px;
+    }
+
+    #banner {
+        color: #ffffff;
+        line-height: 1.4;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+        container-type: inline-size;
+    }
+
+    #middle {
+        color: #ffffff;
+        line-height: 1.4;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+        container-type: inline-size;
+    }
+
+    #colors {
+        color: #ffffff;
+        line-height: 1.4;
+        position: relative;
+        text-align: center;
+        max-width: 100%;
+        container-type: inline-size;
+    }
+
+    #cookifront {
+        margin-left: 6%;
+        width: 44%;
+        float: left;
+    }
+
+    #cookiback {
+        margin-right: 6%;
+        width: 38%;
+        float: right;
+    }
+
+    #shadingToggle {
+        margin-top: 2%;
+        cursor: pointer;
+        font-size: 3cqw;
+        -webkit-user-drag: none;
+    }
+
+    .ca-emote {
+        height: 1.6em;
+        width: auto;
+        object-fit: contain;
+        margin: -0.45em 0;
+    }
+
+    .colorpill {
+        padding: 0.5% 1%;
+        border-radius: 1.5cqw;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .colorpill:active {
+        background: white !important;
+    }
+</style>
+
+<div class="cooki-container">
+    <main>
+        <div id="banner">
+            <h1>Cooki!</h1>
+            <p>she/her ▪︎ <img src="/assets/emotes/transpan.png" class="ca-emote"></p>
+            <img src="/assets/ref/cooki-front-shaded.png" id="cookifront">
+            <img src="/assets/ref/cooki-back-shaded.png" id="cookiback"> <br>
+        </div>
+
+        <div id="colors">
+            <Br>
+            <span class="colorpill" style="color:#C17B3D" title="fur">#FCBF8A</span>
+            <span class="colorpill" style="color:#CF4A2D" title="tail n' head puff">#FD8064</span>
+            <span class="colorpill" style="color:#B9871E" title="bandana">#FECF6E</span>
+            <span class="colorpill" style="color:#5E2D07" title="paw markings">#AF7345</span>
+            <span class="colorpill" style="color:#A94A02" title="paw pads">#F3934A</span>
+            <span class="colorpill" style="color:#BC9373" title="tummy">#FFEDDF</span>
+        </div>
+
+        <div id="middle">
+            <button id="shadingToggle" onclick="toggleShading();">shading: on</button>
+            <p>some description here...,</p>
+        </div>
+
+    </main>
+</div>
+
+<script>
+    document.querySelectorAll('.colorpill').forEach(span => {
+        span.style.backgroundColor = span.textContent;
+
+        span.addEventListener('click', function () {
+            navigator.clipboard.writeText(span.textContent)
+        });
+    });
+</script>
+
+<script>
+    function toggleShading() {
+        const toggleElement = document.getElementById('shadingToggle');
+        const cookiFront = document.getElementById('cookifront');
+        const cookiBack = document.getElementById('cookiback')
+        const currentText = toggleElement.textContent;
+
+        if (currentText.includes('on')) {
+            cookiFront.src = '/assets/ref/cooki-front-unshaded.png';
+            cookiBack.src = '/assets/ref/cooki-back-unshaded.png';
+            toggleElement.textContent = 'shading: off';
+        } else {
+            cookiFront.src = '/assets/ref/cooki-front-shaded.png';
+            cookiBack.src = '/assets/ref/cooki-back-shaded.png';
+            toggleElement.textContent = 'shading: on';
+        }
+    }
+</script>
