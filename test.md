@@ -17,16 +17,16 @@ description: testing page
     }
 </style>
 
-page for testing almost all markdown crap and some css variables lmao 
+page for testing almost all markdown crap and some css variables lmao
 
 <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span>
 
 ## human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
 
 ### The glungus galunga bobo.
-The bongungus wagongus bubo chonko. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tortor libero, nec laoreet sem condimentum nec. Mauris at luctus tellus. Nam eu malesuada nulla, sed condimentum augue. Aenean ut tristique lacus, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> in dapibus mauris. Donec posuere nisi non ipsum commodo auctor. Mauris vel viverra nulla. In mattis vulputate scelerisque. Sed malesuada quam in ligula porttitor commodo. Sed varius ut lorem eget efficitur. Etiam viverra accumsan convallis. 
+The bongungus wagongus bubo chonko. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet tortor libero, nec laoreet sem condimentum nec. Mauris at luctus tellus. Nam eu malesuada nulla, sed condimentum augue. Aenean ut tristique lacus, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> in dapibus mauris. Donec posuere nisi non ipsum commodo auctor. Mauris vel viverra nulla. In mattis vulputate scelerisque. Sed malesuada quam in ligula porttitor commodo. Sed varius ut lorem eget efficitur. Etiam viverra accumsan convallis.
 
-Vestibulum nisl magna, laoreet sit amet lacinia sed, commodo nec augue. Sed faucibus purus nec facilisis vehicula. Donec ut nibh molestie, egestas ante id, dignissim ipsum. Maecenas tellus est, gravida a sem vitae, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> venenatis vulputate felis. Vivamus malesuada pellentesque placerat. Curabitur maximus venenatis est sit amet tincidunt. Vestibulum pellentesque dignissim enim, ac varius massa ornare sed. 
+Vestibulum nisl magna, laoreet sit amet lacinia sed, commodo nec augue. Sed faucibus purus nec facilisis vehicula. Donec ut nibh molestie, egestas ante id, dignissim ipsum. Maecenas tellus est, gravida a sem vitae, <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> venenatis vulputate felis. Vivamus malesuada pellentesque placerat. Curabitur maximus venenatis est sit amet tincidunt. Vestibulum pellentesque dignissim enim, ac varius massa ornare sed.
 
 <h2>Your next<img src="/assets/images/physicalchallenge.gif" class="ca-emote">... is to learn JAVA.</h2>
 
@@ -34,18 +34,18 @@ Vestibulum nisl magna, laoreet sit amet lacinia sed, commodo nec augue. Sed fauc
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
-        
+
         int sum = add(5, 3);
         System.out.println("5 + 3 = " + sum);
     }
-    
+
     public static int add(int a, int b) {
         return a + b;
     }
 }
 ```
 
- Ut ultrices in libero et consequat. Sed aliquam purus nec nulla faucibus, fermentum pharetra tellus tempor. Etiam ultricies lorem sem, interdum dignissim nulla iaculis vitae. Suspendisse nunc orci, ullamcorper ac mi non, placerat faucibus velit. In hac habitasse platea <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ac nulla metus. Aenean quis elit quis tellus rutrum finibus. Proin vel gravida nibh. 
+ Ut ultrices in libero et consequat. Sed aliquam purus nec nulla faucibus, fermentum pharetra tellus tempor. Etiam ultricies lorem sem, interdum dignissim nulla iaculis vitae. Suspendisse nunc orci, ullamcorper ac mi non, placerat faucibus velit. In hac habitasse platea <img src="/assets/emotes/ralsei/ralBoop.png" class="ca-emote"> dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ac nulla metus. Aenean quis elit quis tellus rutrum finibus. Proin vel gravida nibh.
 
 ---
 
@@ -78,15 +78,15 @@ text fx
 ##### H5
 ###### H6
 
-*Italic* or _Italic_  
+*Italic* or _Italic_
 
-**Bold** or __Bold__  
+**Bold** or __Bold__
 
-***Bold Italic*** or ___Bold Italic___  
+***Bold Italic*** or ___Bold Italic___
 
-~~Strikethrough~~  
+~~Strikethrough~~
 
-`Inline code`  
+`Inline code`
 
 > quote text. something big, something huge
 
@@ -127,7 +127,9 @@ image
 
 ---
 
-codeblock testing
+# codeblock testing
+
+funny <a class="ca-button" onclick="funy(document);"> <img src="/assets/emotes/configNEAR.png" class="ca-emote"> config button</a> because funny bluesky post
 
 with my own syntax highlighting theme!
 
@@ -139,7 +141,7 @@ lmao
 ```
 
 ```
-really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. 
+really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason. really long text for no reason.
 ```
 
 ```html
@@ -195,11 +197,11 @@ const add = (a, b) => a + b;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
-        
+
         int sum = add(5, 3);
         System.out.println("5 + 3 = " + sum);
     }
-    
+
     public static int add(int a, int b) {
         return a + b;
     }
@@ -234,7 +236,7 @@ greet "Bash User"
 ```rust
 fn main() {
     println!("Hello, World!");
-    
+
     let sum = add(5, 3);
     println!("5 + 3 = {}", sum);
 }
@@ -253,10 +255,10 @@ int add(int a, int b) {
 
 int main() {
     printf("Hello, World!\n");
-    
+
     int sum = add(5, 3);
     printf("5 + 3 = %d\n", sum);
-    
+
     return 0;
 }
 ```
@@ -276,9 +278,9 @@ private:
     int age;
 public:
     Person(std::string name, int age) : name(name), age(age) {}
-    
+
     void greet() {
-        std::cout << "Hello, my name is " << name 
+        std::cout << "Hello, my name is " << name
                  << " and I am " << age << " years old." << std::endl;
     }
 };
@@ -361,7 +363,7 @@ func add(a int, b int) int {
 
 func main() {
     fmt.Println("Hello, World!")
-    
+
     sum := add(5, 3)
     fmt.Printf("5 + 3 = %d\n", sum)
 }
@@ -371,11 +373,11 @@ func main() {
 class Main {
     static function main() {
         trace("Hello, World!");
-        
+
         var sum = add(5, 3);
         trace('5 + 3 = $sum');
     }
-    
+
     static function add(a:Int, b:Int):Int {
         return a + b;
     }
