@@ -1,6 +1,8 @@
 //  ====================
 //  shaky text fx !!11!!
 
+// fuck
+
 // goal is to make it so that you can call "shakyText()"
 // with parameters ("shakyText(100,0.1)")
 
@@ -41,4 +43,3 @@ function shakyText(shakeInterval = 33.333, shakeStrength = 0.1) {
 document.addEventListener('DOMContentLoaded', () => {
     shakyText();
 })
-

@@ -1,3 +1,6 @@
+// code by cwonfig !!!
+// taken from https://github.com/cgytrus/uwuifier-replugged/blob/main/src/uwuifier.js
+
 let settings = {
     periodToExclamationChance: 0.1,
     stutterChance: 0.2,
