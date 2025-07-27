@@ -386,19 +386,25 @@ td {
     border-radius: calc(var(--roundiness) * 0.75);
     background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.25) 75%) 0%, rgba(255, 255, 255, 0) 100%);
     background-color: color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.1) 90%);
+    user-select: none;
     transition-duration: 0.25s;
 }
 
 .ca-button:hover {
+    text-decoration: none;
     color: color-mix(in srgb, var(--accent-color), white 80%);
     background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(255, 255, 255, 0.25) 50%) 0%, rgba(255, 255, 255, 0) 100%);
     background-color: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 50%);
 }
 
+.ca-button:active {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.25) 50%) 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: color-mix(in srgb, var(--accent-color), rgb(0, 0, 0) 60%);
+}
+
 /* i'm the original
         starwalker
 */
-
         .starwalker,
 #randomHeaderCounter {
     background: linear-gradient(to bottom, #E2E297, #ffc400);

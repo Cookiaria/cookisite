@@ -1,4 +1,4 @@
-let randomHeaderCounter = 0;
+let randomHeaderCounter = localStorage.getItem('randomHeaderCounter') || -1;
 let headersData = [];
 let headers = [];
 const randomHeaderElement = document.getElementById('randomHeader');
@@ -15,17 +15,17 @@ function randomHeader() {
         return;
     if (headers.length == 0)
         headers = headersData.slice();
-    
+
+    localStorage.setItem('randomHeaderCounter', ++randomHeaderCounter);
+
     let idx = Math.floor(Math.random() * headers.length);
     randomHeaderElement.innerHTML = headers[idx];
     headers.splice(idx, 1);
-    
+
     const randomHeaderCounterElem = document.getElementById('randomHeaderCounter');
     if (randomHeaderCounterElem) {
         randomHeaderCounterElem.innerHTML = randomHeaderCounter + ' time';
         if (randomHeaderCounter != 1)
             randomHeaderCounterElem.innerHTML += 's';
     }
-
-    randomHeaderCounter++;
 }

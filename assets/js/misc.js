@@ -17,18 +17,18 @@ function escapeString(string) { return string.replaceAll(/(?=[~_<>])/g, '\\'); }
 function isCaps(string) { return string == string.toUpperCase(); }
 
 let simpleReplacements = [
-    [ 'l', 'w' ],
-    [ 'r', 'w' ],
-    [ 'na', 'nya' ],
-    [ 'ne', 'nye' ],
-    [ 'ni', 'nyi' ],
-    [ 'no', 'nyo' ],
-    [ 'nu', 'nyu' ],
-    [ 'pow', 'paw' ],
-    [ /(?<!w)ui/g, 'wi' ],
-    [ /(?<!w)ue/g, 'we' ],
-    [ 'attempt', 'attwempt' ],
-    [ 'config', 'cwonfig' ]
+    ['l', 'w'],
+    ['r', 'w'],
+    ['na', 'nya'],
+    ['ne', 'nye'],
+    ['ni', 'nyi'],
+    ['no', 'nyo'],
+    ['nu', 'nyu'],
+    ['pow', 'paw'],
+    [/(?<!w)ui/g, 'wi'],
+    [/(?<!w)ue/g, 'we'],
+    ['attempt', 'attwempt'],
+    ['config', 'cwonfig']
 ];
 
 let wordReplacements = {
@@ -105,7 +105,7 @@ let suffixes = [
 
 function chooseSuffixVariation(list) {
     let option = list[Math.floor(Math.random() * list.length)];
-    if(Array.isArray(option)) return chooseSuffixVariation(option);
+    if (Array.isArray(option)) return chooseSuffixVariation(option);
     return option;
 }
 
@@ -113,21 +113,21 @@ let replacements = [
     // . to !
     [
         // match a . with a space or string end after it
-        /\.(?= |$)/g, (_escape, isIgnoredAt) => function(match, offset, string) {
-            if(isIgnoredAt(offset, string)) return match;
-            if(!getChance(settings.periodToExclamationChance))
+        /\.(?= |$)/g, (_escape, isIgnoredAt) => function (match, offset, string) {
+            if (isIgnoredAt(offset, string)) return match;
+            if (!getChance(settings.periodToExclamationChance))
                 return match;
             return '!';
         }
     ],
     // duplicate characters
     [
-        /[,!]/g, (_escape, isIgnoredAt) => function(match, offset, string) {
-            if(isIgnoredAt(offset, string)) return match;
-            if(getChance(settings.duplicateCharactersChance)) {
+        /[,!]/g, (_escape, isIgnoredAt) => function (match, offset, string) {
+            if (isIgnoredAt(offset, string)) return match;
+            if (getChance(settings.duplicateCharactersChance)) {
                 let amount = Math.floor((Math.random() + 1) * (settings.duplicateCharactersAmount - 1));
                 let newMatch = match;
-                for(let i = 0; i < amount; i++)
+                for (let i = 0; i < amount; i++)
                     newMatch += match;
                 match = newMatch;
             }
@@ -137,15 +137,15 @@ let replacements = [
     // simple and word replacements
     [
         // match a word
-        /(?<=\b)[a-zA-Z\']+(?=\b)/g, (_escape, isIgnoredAt) => function(match, offset, string) {
-            if(isIgnoredAt(offset, string)) return match;
+        /(?<=\b)[a-zA-Z\']+(?=\b)/g, (_escape, isIgnoredAt) => function (match, offset, string) {
+            if (isIgnoredAt(offset, string)) return match;
             let caps = isCaps(match);
             match = match.toLowerCase();
-            if(match in wordReplacements) // only replace whole words
+            if (match in wordReplacements) // only replace whole words
                 match = wordReplacements[match];
-            for(const [ pattern, replacement ] of simpleReplacements) {
+            for (const [pattern, replacement] of simpleReplacements) {
                 // don't replace whole words
-                if((pattern instanceof RegExp) && match.match(pattern)?.includes(match) || pattern == match)
+                if ((pattern instanceof RegExp) && match.match(pattern)?.includes(match) || pattern == match)
                     continue;
                 match = match.replaceAll(pattern, replacement);
             }
@@ -155,25 +155,25 @@ let replacements = [
     // stutter
     [
         // match beginning of a word
-        /(?<= |^)[a-zA-Z]/g, (_escape, isIgnoredAt) => function(match, offset, string) {
-            if(isIgnoredAt(offset, string)) return match;
-            if(!getChance(settings.stutterChance))
+        /(?<= |^)[a-zA-Z]/g, (_escape, isIgnoredAt) => function (match, offset, string) {
+            if (isIgnoredAt(offset, string)) return match;
+            if (!getChance(settings.stutterChance))
                 return match;
             return `${match}-${match}`;
         }
     ],
     // suffixes
     [
-        /(?<=[\.\!\?\,\;\-])(?= )|(?=$)/g, (escape, isIgnoredAt) => function(match, offset, string) {
-            if(isIgnoredAt(offset, string)) return match;
+        /(?<=[\.\!\?\,\;\-])(?= )|(?=$)/g, (escape, isIgnoredAt) => function (match, offset, string) {
+            if (isIgnoredAt(offset, string)) return match;
             let presuffix = '';
             let suffix = '';
-            if(getChance(settings.presuffixChance))
+            if (getChance(settings.presuffixChance))
                 presuffix = chooseSuffixVariation(presuffixes);
-            if(getChance(settings.suffixChance))
+            if (getChance(settings.suffixChance))
                 suffix = ` ${chooseSuffixVariation(suffixes)}`;
             let finalSuffix = `${presuffix}${suffix}`;
-            if(escape) finalSuffix = escapeString(finalSuffix);
+            if (escape) finalSuffix = escapeString(finalSuffix);
             return finalSuffix;
         }
     ]
@@ -188,7 +188,7 @@ function uwuify(string, escape = false, isIgnoredAt = () => false) {
     return string;
 }
 
-function funy(elem) {
+function configButton(elem) {
     if (elem.nodeName == '#text') {
         elem.nodeValueOrig = elem.nodeValueOrig || elem.nodeValue;
         elem.nodeValue = uwuify(elem.nodeValueOrig);
@@ -197,9 +197,20 @@ function funy(elem) {
         return;
     }
     for (let child of elem.childNodes) {
-        funy(child);
+        configButton(child);
     }
 
     document.documentElement.style.setProperty('--accent-color', '#00ff00');
     document.documentElement.style.setProperty('--banner-image', 'url(/assets/images/banner-config.png)');
+}
+
+// ============= other stuff
+// maxi button
+
+var audio = new Audio('/assets/maxi.wav');
+
+function maxiSound() {
+    audio.currentTime = 0;
+
+    audio.play();
 }
