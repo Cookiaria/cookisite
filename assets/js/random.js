@@ -1,5 +1,6 @@
+let randomHeaderCounter = 0;
 let headersData = [];
-let previousIndex = -1;
+let headers = [];
 const randomHeaderElement = document.getElementById('randomHeader');
 
 fetch('/assets/randomstrings.json')
@@ -10,13 +11,21 @@ fetch('/assets/randomstrings.json')
     });
 
 function randomHeader() {
-    if (headersData.length > 0) {
-        let randomIndex;
-        do {
-            randomIndex = Math.floor(Math.random() * headersData.length);
-        } while (randomIndex === previousIndex && headersData.length > 1); 
-        previousIndex = randomIndex;
-
-        randomHeaderElement.innerHTML = headersData[randomIndex];
+    if (headersData.length == 0)
+        return;
+    if (headers.length == 0)
+        headers = headersData.slice();
+    
+    let idx = Math.floor(Math.random() * headers.length);
+    randomHeaderElement.innerHTML = headers[idx];
+    headers.splice(idx, 1);
+    
+    const randomHeaderCounterElem = document.getElementById('randomHeaderCounter');
+    if (randomHeaderCounterElem) {
+        randomHeaderCounterElem.innerHTML = randomHeaderCounter + ' time';
+        if (randomHeaderCounter != 1)
+            randomHeaderCounterElem.innerHTML += 's';
     }
+
+    randomHeaderCounter++;
 }

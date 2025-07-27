@@ -12,9 +12,11 @@
     --accent-color: #f86;
     --text-color: color-mix(in srgb, var(--accent-color), white 70%);
     --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.5) 80);
+
+    --banner-image: url(/assets/images/banner.png);
+
     --body-filters: blur(20px) brightness(80%);
     --body-shadow: 0 0 32px rgba(0, 0, 0, 0.75);
-
 
     --background-color: color-mix(in srgb, var(--accent-color), black 80%);
     --background-tile: url(/assets/images/tiles/cattile_dark.png);
@@ -153,7 +155,7 @@ blockquote>p {
 .ca-header {
     user-select: none;
     position: relative;
-    background: url(/assets/images/banner.png) no-repeat right 60%;
+    background: var(--banner-image) no-repeat right 60%;
     background-color: var(--body-color);
     backdrop-filter: var(--body-filters);
 
@@ -397,17 +399,11 @@ td {
         starwalker
 */
 
-        .starwalker {
+        .starwalker,
+#randomHeaderCounter {
     background: linear-gradient(to bottom, #E2E297, #ffc400);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 500;
 }
-
-
-
-
-
-
-

@@ -21,8 +21,6 @@ page for testing almost all markdown crap and some css variables lmao
 
 <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span> <span class="ca-button">this is a test button</span>
 
-
-
 ## human... i remember you're <span id="shaky" style="color:red;text-shadow: 0 0 24px red;">genocides.</span>
 
 ### The glungus galunga bobo.
@@ -125,7 +123,7 @@ imagine if you **boom**, but then `Win` + `R` and then `powershell`, and somehow
 
 image
 
-![aaa](/assets/art/gallery/cooki2.png )
+![aaa](assets/images/404.png)
 
 ---
 
