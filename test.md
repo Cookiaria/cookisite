@@ -129,7 +129,7 @@ image
 
 # codeblock testing
 
-funny <a class="ca-button" onclick="funy(document);"> <img src="/assets/emotes/configNEAR.png" class="ca-emote"> config button</a> because funny bluesky post
+funny <a class="ca-button" onclick="configButton(document);"> <img src="/assets/emotes/configNEAR.png" class="ca-emote"> config button</a> because funny bluesky post
 
 with my own syntax highlighting theme!
 

@@ -11,11 +11,11 @@
 
     --accent-color: #f86;
     --text-color: color-mix(in srgb, var(--accent-color), white 70%);
-    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.5) 80);
+    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.25) 95%);
 
     --banner-image: url(/assets/images/banner.png);
 
-    --body-filters: blur(20px) brightness(80%);
+    --body-filters: blur(20px);
     --body-shadow: 0 0 32px rgba(0, 0, 0, 0.75);
 
     --background-color: color-mix(in srgb, var(--accent-color), black 80%);
@@ -31,7 +31,8 @@
     --min-width: 520px;
 }
 
-@media (pointer:none), (pointer:coarse) {
+@media (pointer:none),
+(pointer:coarse) {
     :root {
         --body-filters: none;
         --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 1) 70%);
@@ -152,15 +153,12 @@ blockquote>p {
     =============
 */
 
-
 .ca-header {
     user-select: none;
     position: relative;
     background: var(--banner-image) no-repeat right 60%;
     background-color: var(--body-color);
     backdrop-filter: var(--body-filters);
-
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
 
     background-size: cover;
     width: 100%;
@@ -277,8 +275,8 @@ blockquote>p {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: calc(100% + var(--background-tile-size));
+    height: calc(100% + var(--background-tile-size));
     background: var(--background-tile) repeat;
     background-size: var(--background-tile-size);
     opacity: var(--background-opacity);
@@ -287,11 +285,10 @@ blockquote>p {
 
 @keyframes cattile {
     0% {
-        background-position: 0 0;
+        transform: translate(calc(-1 * var(--background-tile-size)), calc(-1 * var(--background-tile-size)));
     }
-
     100% {
-        background-position: calc(var(--background-tile-size)) var(--background-tile-size);
+        transform: translate(0, 0);
     }
 }
 
@@ -408,7 +405,7 @@ td {
 /* i'm the original
         starwalker
 */
-        .starwalker,
+.starwalker,
 #randomHeaderCounter {
     background: linear-gradient(to bottom, #E2E297, #ffc400);
     -webkit-background-clip: text;
