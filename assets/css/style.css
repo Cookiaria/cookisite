@@ -11,7 +11,7 @@
 
     --accent-color: #f86;
     --text-color: color-mix(in srgb, var(--accent-color), white 70%);
-    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 1) 80%);
+    --body-color: color-mix(in srgb, var(--accent-color), rgba(0, 0, 0, 0.5) 80);
 
     --banner-image: url(/assets/images/banner.png);
 
@@ -152,11 +152,15 @@ blockquote>p {
     =============
 */
 
+
 .ca-header {
     user-select: none;
     position: relative;
     background: var(--banner-image) no-repeat right 60%;
     background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
+
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
 
     background-size: cover;
     width: 100%;
@@ -214,6 +218,7 @@ blockquote>p {
     padding: calc(var(--padding) / 3) var(--padding);
     width: fit-content;
     background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
     margin: 0 3px 0 0;
     padding-top: 4px;
     color: var(--text-color);
@@ -254,6 +259,7 @@ blockquote>p {
     box-shadow: var(--body-shadow);
 
     background-color: var(--body-color);
+    backdrop-filter: var(--body-filters);
 
     min-height: calc(100vh - 266px);
 }
