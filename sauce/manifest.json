@@ -1,0 +1,10 @@
+{
+  "name": "Balatro",
+  "icons": [
+    {
+      "src": "barb.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ]
+}

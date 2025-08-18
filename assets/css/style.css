@@ -228,6 +228,8 @@ blockquote>p {
     border-bottom-right-radius: var(--roundiness);
     z-index: 0;
     transition-duration: 0.1s;
+
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
 }
 
 .ca-tablinks:nth-child(1) {
