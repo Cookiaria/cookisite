@@ -165,6 +165,7 @@ Module.expectedDataFileDownloads++;
 
     /* Check if there's a cached package, and if so whether it's the latest available */
     function checkCachedPackage(db, packageName, callback, errback) {
+      return callback(false);
       var transaction = db.transaction([METADATA_STORE_NAME], IDB_RO);
       var metadata = transaction.objectStore(METADATA_STORE_NAME);
 
