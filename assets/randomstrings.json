@@ -133,6 +133,14 @@
         "<a class=\"ca-button\" onclick=\"configButton(document);\"> <img src=\"/assets/emotes/configNEAR.png\" class=\"ca-emote\"> config button</a>",
         "A BALATRILLION",
         "you have pressed the cat a total of <span id=\"randomHeaderCounter\"></span>!",
-        "<a class=\"ca-button\" id=\"maxi\" onclick=\"maxiSound()\"><img src=\"/assets/images/maxi.png\" class=\"ca-emote\"> maxi button</a>"
+        "<a class=\"ca-button\" id=\"maxi\" onclick=\"maxiSound()\"><img src=\"/assets/images/maxi.png\" class=\"ca-emote\"> maxi button</a>",
+        "<=== click me",
+        "5.6727420838951e-123 BALATRILLION DOLLARS",
+        "Beat The Rhythm And Notes",
+        "A Test of Wit & Flow",
+        "& A Series Of Challenging Songs,",
+        "With The Intent To Be Enjoyed",
+        "My castle town...",
+        "play beatblock"
     ]
 }

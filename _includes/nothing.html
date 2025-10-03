@@ -1,0 +1,61 @@
+<style>
+    .sorry-nothing {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .thething {
+        margin: 64px 0 0 0;
+        image-rendering: pixelated;
+        min-width: 520px;
+        width: 600px;
+        display: block;
+    }
+</style>
+
+<div class="sorry-nothing">
+    <img src="/assets/images/404.png" class="thething">
+    <h1>sorry, nothing.</h1>
+    <p>i genuinely don't have time to finish this thing lol</p>
+    <p>check back later!</p>
+
+    <hr>
+
+    <div class="webring">
+        <p>while you're here, check out the "unnamed webring"!</p>
+        <span>&lt;</span> <a id="webring-prev" class="ca-button"></a> • <a id="webring-next" class="ca-button"></a> <span>></span>
+    </div>
+</div>
+
+<script>
+    async function getWebringLinks(domain) {
+        let domains = (await (await fetch('https://gist.githubusercontent.com/cgytrus/815ad706c1c3b32b77ee8f3e0e8b1b4f/raw/unnamed-webring.txt')).text()).split(/\r?\n/).filter(x => x.length > 0);
+        for (let i = 0; i < domains.length; i++) {
+            if (!domains[i].includes(domain))
+                continue;
+            return {
+                prev: {
+                    url: `https://${domains[(i - 1 + domains.length) % domains.length]}`,
+                    domain: domains[(i - 1 + domains.length) % domains.length]
+                },
+                next: {
+                    url: `https://${domains[(i + 1) % domains.length]}`,
+                    domain: domains[(i + 1) % domains.length]
+                }
+            };
+        }
+        return {};
+    }
+
+    getWebringLinks('cookiaria.lol').then(links => {
+        const prevLink = document.getElementById('webring-prev');
+        const nextLink = document.getElementById('webring-next');
+
+        prevLink.href = links.prev.url;
+        prevLink.textContent = links.prev.domain;
+
+        nextLink.href = links.next.url;
+        nextLink.textContent = links.next.domain;
+    });
+</script>

@@ -171,6 +171,7 @@ blockquote>p {
     border-bottom-left-radius: var(--roundiness);
     border-bottom-right-radius: var(--roundiness);
     border-left: var(--header-border) solid var(--accent-color);
+    border-bottom: var(--accent-color) 3px solid;
 }
 
 .ca-header>img {
